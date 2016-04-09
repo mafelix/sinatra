@@ -1,0 +1,17 @@
+
+<h1>All Messages</h1>
+<hr/>
+  <% if @messages %>
+    <% @messages.each do |message| %>
+      <div class="message">
+        <h3><a href="/messages/<%= message.id %>"><%= message.title %></a> <small>(by: <%= message.author %>)</small></h3>
+        <p>
+          <%= message.content %>
+        </p>
+      </div>
+    <% end %>
+  <% end %>
+
+<hr/>
+<a href="/messages/new">Post a message... It's FREE (for now)!</a>
+<a href="/">Go back to the front page</a>
